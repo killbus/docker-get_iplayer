@@ -32,7 +32,10 @@ RUN set eux; \
     rm -rf get-iplayer*; \
     rm /tmp/latest.json
 
-COPY files/ /
 
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD /start
+# COPY files/ /
+
+# ENTRYPOINT ["/sbin/tini", "--"]
+# CMD /start
+ENTRYPOINT ["get_iplayer", "--ffmpeg", "/usr/bin/ffmpeg", "--profile-dir", "$GETIPLAYER_PROFILE", "--output", "$GETIPLAYER_OUTPUT", "--atomicparsley", "/usr/bin/atomicparsley"]
+CMD ["-h"]
