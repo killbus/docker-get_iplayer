@@ -1,4 +1,7 @@
-FROM alpine:latest
+FROM --platform=$TARGETPLATFORM alpine AS runtime
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+
 LABEL MAINTAINER="Jonathan Harris <jonathan@marginal.org.uk>"
 ENV GETIPLAYER_OUTPUT=/output GETIPLAYER_PROFILE=/output/.get_iplayer PUID=1000 PGID=100 PORT=1935 BASEURL=
 EXPOSE $PORT
