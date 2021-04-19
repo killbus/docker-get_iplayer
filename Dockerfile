@@ -37,5 +37,5 @@ RUN set eux; \
 
 # ENTRYPOINT ["/sbin/tini", "--"]
 # CMD /start
-ENTRYPOINT ["get_iplayer", "--ffmpeg", "/usr/bin/ffmpeg", "--profile-dir", "$GETIPLAYER_PROFILE", "--output", "$GETIPLAYER_OUTPUT", "--atomicparsley", "/usr/bin/atomicparsley"]
+ENTRYPOINT ["get_iplayer", "--ffmpeg", "/usr/bin/ffmpeg", "--profile-dir", "/output/.get_iplayer", "--output", "/output", "--atomicparsley", "/usr/bin/atomicparsley"]
 CMD ["-h"]
